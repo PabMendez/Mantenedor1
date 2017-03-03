@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block seccion2 %}
+    <h1>Menu</h1>
+{% endblock %}
+
+{% block seccion3 %}
+    <div class="seccioncilla">
+    <a class="botones" href={{path("menu_add")}}>Agregar menu</a><br><br>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Ruta</th>
+        <th>Listar</th>
+        <th>Agregar</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+        <th>Acciones</th>
+    </tr>
+    <tr>
+        {% for lista in menu %}
+            <td>{{lista.id}}</td>
+            <td>{{lista.nombre}}</td>
+            <td>{{lista.ruta}}</td>
+            <td>{{lista.listar}}</td>
+            <td>{{lista.agregar}}</td>
+            <td>{{lista.editar}}</td>
+            <td>{{lista.eliminar}}</td>
+            <td>
+                <a class="botoness" href="{{path("menu_delete",{"id":lista.id})}}" onclick="return confirm('Estas seguro?')">Eliminar</a>
+                <a class="botoness" href="{{path("menu_edit",{"id":lista.id})}}">Editar</a>  
+            </td>
+    </tr>
+{% endfor %}
+</table>
+
+</div>
+{% endblock %}

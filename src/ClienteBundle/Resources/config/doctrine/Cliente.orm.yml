@@ -1,0 +1,58 @@
+ClienteBundle\Entity\Cliente:
+    type: entity
+    table: cliente
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        rut:
+            type: string
+            nullable: true
+            length: 12
+            options:
+                fixed: false
+        nombres:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+        apellidop:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+            column: apellidoP
+        apellidom:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+            column: apellidoM
+        direccion:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+        email:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+        fono:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

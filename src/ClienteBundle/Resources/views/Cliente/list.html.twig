@@ -1,0 +1,41 @@
+{% extends 'layout.html.twig' %}
+
+{% block seccion2 %}
+    <h1>Cliente</h1>
+{% endblock %}
+
+{% block seccion3 %}
+    <div class="seccioncilla">
+    <a class="botones" href={{path("cliente_add")}}>Agregar cliente</a><br><br>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Rut</th>
+        <th>Nombres</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>Direccion</th>
+        <th>Email</th>
+        <th>Fono</th>
+        <th>Acciones</th>
+    </tr>
+    <tr>
+        {% for lista in cliente %}
+            <td>{{lista.id}}</td>
+            <td>{{lista.rut}}</td>
+            <td>{{lista.nombres}}</td>
+            <td>{{lista.apellidoP}}</td>
+            <td>{{lista.apellidoM}}</td>
+            <td>{{lista.direccion}}</td>
+            <td>{{lista.email}}</td>
+            <td>{{lista.fono}}</td>
+            <td>
+                <a class="botoness" href="{{path("cliente_delete",{"id":lista.id})}}" onclick="return confirm('Estas seguro?')">Eliminar</a>
+                <a class="botoness" href="{{path("cliente_edit",{"id":lista.id})}}">Editar</a>  
+            </td>
+    </tr>
+{% endfor %}
+</table>
+
+</div>
+{% endblock %}

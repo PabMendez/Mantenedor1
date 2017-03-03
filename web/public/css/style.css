@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/*--------------------------ELEMENTOS DE NEUTRALIDAD----------------------------*/
+header, article, nav{
+    display:block;
+    margin:0;
+    padding:0;
+}
+
+.container{
+    width:100%;
+}
+
+/*-------------------------ETIQUETAS ESTRUCTURALES------------------------------*/
+header{
+    text-align:center;
+    background: green;
+    color:white;
+    padding: 1em;
+}
+
+nav{
+    float: left;
+    max-width: 200px;
+    margin: 0;
+    padding:2em;
+    background: brown;
+    height: 505px;
+}
+
+article{
+    margin-left: 150px;
+    padding: 1em;
+    height: 500px;
+    clear: right;
+    
+}
+
+.seccioncilla table, td, th{
+    padding-left: 10px;
+    border-collapse: collapse;
+    position: relative;
+    border: 1px solid black;
+    
+}
+table{
+    width: 95%;
+    
+    
+}
+/*------------------------ESTILOS DE FUENTES-------------------------------------*/
+
+div .botones{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+}
+div .botones:hover{
+    background: green;
+}
+div .botoness{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+    
+}
+div .botoness:hover{
+    background: green;
+}
+
+.formularito {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 25px;
+    
+}
+.divisito {
+    width: 500px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-weight: bold;
+    
+}
+
+.botonsuelo{
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    max-height: 500px;
+    
+}
+
+.botonsuelo:hover {
+    background-color: #45a049;
+}

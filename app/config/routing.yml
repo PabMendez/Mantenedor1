@@ -1,0 +1,27 @@
+menu_rol:
+    resource: "@MenuRolBundle/Resources/config/routing.yml"
+    prefix:   /
+
+usuario:
+    resource: "@UsuarioBundle/Resources/config/routing.yml"
+    prefix:   /
+
+rol:
+    resource: "@RolBundle/Resources/config/routing.yml"
+    prefix:   /
+
+proveedor:
+    resource: "@ProveedorBundle/Resources/config/routing.yml"
+    prefix:   /
+
+menu:
+    resource: "@MenuBundle/Resources/config/routing.yml"
+    prefix:   /
+
+cliente:
+    resource: "@ClienteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

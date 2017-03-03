@@ -1,0 +1,19 @@
+menu_homepage:
+    path:     /
+    defaults: { _controller: MenuBundle:Default:index }
+    
+menu_add:
+    path: /Menu/add
+    defaults: { _controller: MenuBundle:Menu:add }
+    
+menu_list:
+    path: /Menu/list
+    defaults: { _controller: MenuBundle:Menu:list }
+    
+menu_edit:
+    path: /Menu/edit/{id}
+    defaults: { _controller: MenuBundle:Menu:edit }
+    
+menu_delete:
+    path: /Menu/delete/{id}
+    defaults: { _controller: MenuBundle:Menu:delete }

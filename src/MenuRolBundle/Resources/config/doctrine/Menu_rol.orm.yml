@@ -1,0 +1,18 @@
+MenuRolBundle\Entity\Menu_rol:
+    type: entity
+    table: null
+    repositoryClass: MenuRolBundle\Repository\Menu_rolRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        menuId:
+            type: boolean
+            column: menu_id
+        rolId:
+            type: boolean
+            column: rol_id
+    lifecycleCallbacks: {  }

@@ -1,0 +1,19 @@
+rol_homepage:
+    path:     /
+    defaults: { _controller: RolBundle:Default:index }
+
+rol_add:
+    path: /Rol/add
+    defaults: { _controller: RolBundle:Rol:add }
+    
+rol_list:
+    path: /Rol/list
+    defaults: { _controller: RolBundle:Rol:list }
+    
+rol_edit:
+    path: /Rol/edit/{id}
+    defaults: { _controller: RolBundle:Rol:edit }
+    
+rol_delete:
+    path: /Rol/delete/{id}
+    defaults: { _controller: RolBundle:Rol:delete }

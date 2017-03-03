@@ -1,0 +1,41 @@
+{% extends 'layout.html.twig' %}
+
+{% block seccion2 %}
+    <h1>Proveedor</h1>
+{% endblock %}
+
+{% block seccion3 %}
+    <div class="seccioncilla">
+    <a class="botones" href={{path("proveedor_add")}}>Agregar proveedor</a><br><br>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nombres</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>Rut</th>
+        <th>RazonSocial</th>
+        <th>Email</th>
+        <th>Fono</th>
+        <th>Acciones</th>
+    </tr>
+    <tr>
+        {% for lista in proveedor %}
+            <td>{{lista.id}}</td>
+            <td>{{lista.nombres}}</td>
+            <td>{{lista.apellidoP}}</td>
+            <td>{{lista.apellidoM}}</td>
+            <td>{{lista.rut}}</td>
+            <td>{{lista.razonSocial}}</td>
+            <td>{{lista.email}}</td>
+            <td>{{lista.fono}}</td>
+            <td>
+                <a class="botoness" href="{{path("proveedor_delete",{"id":lista.id})}}" onclick="return confirm('Estas seguro?')">Eliminar</a>
+                <a class="botoness" href="{{path("proveedor_edit",{"id":lista.id})}}">Editar</a>  
+            </td>
+    </tr>
+{% endfor %}
+</table>
+
+</div>
+{% endblock %}

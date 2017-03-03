@@ -1,0 +1,23 @@
+RolBundle\Entity\Rol:
+    type: entity
+    table: null
+    repositoryClass: RolBundle\Repository\RolRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: '100'
+        listar:
+            type: boolean
+        agregar:
+            type: boolean
+        editar:
+            type: boolean
+        eliminar:
+            type: boolean
+    lifecycleCallbacks: {  }

@@ -1,0 +1,3 @@
+menu_rol_homepage:
+    path:     /
+    defaults: { _controller: MenuRolBundle:Default:index }

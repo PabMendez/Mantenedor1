@@ -1,0 +1,19 @@
+proveedor_homepage:
+    path:     /
+    defaults: { _controller: ProveedorBundle:Default:index }
+
+proveedor_add:
+    path: /Proveedor/add
+    defaults: { _controller: ProveedorBundle:Proveedor:add }
+    
+proveedor_list:
+    path: /Proveedor/list
+    defaults: { _controller: ProveedorBundle:Proveedor:list }
+    
+proveedor_edit:
+    path: /Proveedor/edit/{id}
+    defaults: { _controller: ProveedorBundle:Proveedor:edit }
+    
+proveedor_delete:
+    path: /Proveedor/delete/{id}
+    defaults: { _controller: ProveedorBundle:Proveedor:delete }

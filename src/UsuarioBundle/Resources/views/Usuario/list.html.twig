@@ -1,0 +1,43 @@
+{% extends 'layout.html.twig' %}
+
+{% block seccion2 %}
+    <h1>Usuario</h1>
+{% endblock %}
+
+{% block seccion3 %}
+    <div class="seccioncilla">
+    <a class="botones" href={{path("usuario_add")}}>Agregar usuario</a><br><br>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>RolId</th>
+        <th>Rut</th>
+        <th>Nombres</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>UserName</th>
+        <th>Password</th>
+        <th>Email</th>
+        <th>Acciones</th>
+    </tr>
+    <tr>
+        {% for lista in usuario %}
+            <td>{{lista.id}}</td>
+            <td>{{lista.rolId}}</td>
+            <td>{{lista.rut}}</td>
+            <td>{{lista.nombres}}</td>
+            <td>{{lista.apellidoP}}</td>
+            <td>{{lista.apellidoM}}</td>
+            <td>{{lista.username}}</td>
+            <td>{{lista.password}}</td>
+            <td>{{lista.email}}</td>
+            <td>
+                <a class="botoness" href="{{path("usuario_delete",{"id":lista.id})}}" onclick="return confirm('Estas seguro?')">Eliminar</a>
+                <a class="botoness" href="{{path("usuario_edit",{"id":lista.id})}}">Editar</a>  
+            </td>
+    </tr>
+{% endfor %}
+</table>
+
+</div>
+{% endblock %}

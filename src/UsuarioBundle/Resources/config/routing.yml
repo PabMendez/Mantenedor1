@@ -1,0 +1,19 @@
+usuario_homepage:
+    path:     /
+    defaults: { _controller: UsuarioBundle:Default:index }
+
+usuario_add:
+    path: /Usuario/add
+    defaults: { _controller: UsuarioBundle:Usuario:add }
+
+usuario_list:
+    path: /Usuario/list
+    defaults: { _controller: UsuarioBundle:Usuario:list }
+    
+usuario_edit:
+    path: /Usuario/edit/{id}
+    defaults: { _controller: UsuarioBundle:Usuario:edit }
+    
+usuario_delete:
+    path: /Usuario/delete/{id}
+    defaults: { _controller: UsuarioBundle:Usuario:delete }

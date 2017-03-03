@@ -1,0 +1,4 @@
+services:
+#    menu_rol.example:
+#        class: MenuRolBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

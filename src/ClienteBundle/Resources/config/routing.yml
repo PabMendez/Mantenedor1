@@ -1,0 +1,15 @@
+cliente_add:
+    path: /Cliente/add
+    defaults: { _controller: ClienteBundle:Cliente:add }
+
+cliente_list:
+    path: /Cliente/list
+    defaults: { _controller: ClienteBundle:Cliente:list }
+    
+cliente_edit:
+    path: /Cliente/edit/{id}
+    defaults: { _controller: ClienteBundle:Cliente:edit }
+    
+cliente_delete:
+    path: /Cliente/delete/{id}
+    defaults: { _controller: ClienteBundle:Cliente:delete }
