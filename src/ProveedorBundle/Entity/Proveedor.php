@@ -2,48 +2,71 @@
 
 namespace ProveedorBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Proveedor
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="ProveedorBundle\Repository\ProveedorRepository")
  */
 class Proveedor
 {
     /**
-     * @var int
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nombres", type="string", length=50)
      */
     private $nombres;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="apellidoP", type="string", length=50)
      */
     private $apellidoP;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="apellidoM", type="string", length=255)
      */
     private $apellidoM;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="rut", type="string", length=12)
      */
     private $rut;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="razonSocial", type="string", length=50)
      */
     private $razonSocial;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=50)
      */
     private $email;
 
     /**
-     * @var string
+     * @var integer
+     *
+     * @ORM\Column(name="fono", type="integer")
      */
     private $fono;
 
@@ -51,7 +74,7 @@ class Proveedor
     /**
      * Get id
      *
-     * @return int
+     * @return integer 
      */
     public function getId()
     {
@@ -62,7 +85,6 @@ class Proveedor
      * Set nombres
      *
      * @param string $nombres
-     *
      * @return Proveedor
      */
     public function setNombres($nombres)
@@ -75,7 +97,7 @@ class Proveedor
     /**
      * Get nombres
      *
-     * @return string
+     * @return string 
      */
     public function getNombres()
     {
@@ -86,7 +108,6 @@ class Proveedor
      * Set apellidoP
      *
      * @param string $apellidoP
-     *
      * @return Proveedor
      */
     public function setApellidoP($apellidoP)
@@ -99,7 +120,7 @@ class Proveedor
     /**
      * Get apellidoP
      *
-     * @return string
+     * @return string 
      */
     public function getApellidoP()
     {
@@ -110,7 +131,6 @@ class Proveedor
      * Set apellidoM
      *
      * @param string $apellidoM
-     *
      * @return Proveedor
      */
     public function setApellidoM($apellidoM)
@@ -123,7 +143,7 @@ class Proveedor
     /**
      * Get apellidoM
      *
-     * @return string
+     * @return string 
      */
     public function getApellidoM()
     {
@@ -134,7 +154,6 @@ class Proveedor
      * Set rut
      *
      * @param string $rut
-     *
      * @return Proveedor
      */
     public function setRut($rut)
@@ -147,7 +166,7 @@ class Proveedor
     /**
      * Get rut
      *
-     * @return string
+     * @return string 
      */
     public function getRut()
     {
@@ -158,7 +177,6 @@ class Proveedor
      * Set razonSocial
      *
      * @param string $razonSocial
-     *
      * @return Proveedor
      */
     public function setRazonSocial($razonSocial)
@@ -171,7 +189,7 @@ class Proveedor
     /**
      * Get razonSocial
      *
-     * @return string
+     * @return string 
      */
     public function getRazonSocial()
     {
@@ -182,7 +200,6 @@ class Proveedor
      * Set email
      *
      * @param string $email
-     *
      * @return Proveedor
      */
     public function setEmail($email)
@@ -195,7 +212,7 @@ class Proveedor
     /**
      * Get email
      *
-     * @return string
+     * @return string 
      */
     public function getEmail()
     {
@@ -205,8 +222,7 @@ class Proveedor
     /**
      * Set fono
      *
-     * @param string $fono
-     *
+     * @param integer $fono
      * @return Proveedor
      */
     public function setFono($fono)
@@ -219,11 +235,10 @@ class Proveedor
     /**
      * Get fono
      *
-     * @return string
+     * @return integer 
      */
     public function getFono()
     {
         return $this->fono;
     }
 }
-

@@ -2,51 +2,74 @@
 
 namespace MenuBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Menu
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="MenuBundle\Repository\MenuRepository")
  */
 class Menu
 {
     /**
-     * @var int
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255)
      */
     private $nombre;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="ruta", type="string", length=255)
      */
     private $ruta;
 
     /**
-     * @var bool
+     * @var boolean
+     *
+     * @ORM\Column(name="listar", type="boolean")
      */
     private $listar;
 
     /**
-     * @var bool
+     * @var boolean
+     *
+     * @ORM\Column(name="agregar", type="boolean")
      */
     private $agregar;
 
     /**
-     * @var bool
+     * @var boolean
+     *
+     * @ORM\Column(name="editar", type="boolean")
      */
     private $editar;
 
     /**
-     * @var bool
+     * @var boolean
+     *
+     * @ORM\Column(name="eliminar", type="boolean")
      */
     private $eliminar;
+
+    
 
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer 
      */
     public function getId()
     {
@@ -57,7 +80,6 @@ class Menu
      * Set nombre
      *
      * @param string $nombre
-     *
      * @return Menu
      */
     public function setNombre($nombre)
@@ -70,7 +92,7 @@ class Menu
     /**
      * Get nombre
      *
-     * @return string
+     * @return string 
      */
     public function getNombre()
     {
@@ -81,7 +103,6 @@ class Menu
      * Set ruta
      *
      * @param string $ruta
-     *
      * @return Menu
      */
     public function setRuta($ruta)
@@ -94,7 +115,7 @@ class Menu
     /**
      * Get ruta
      *
-     * @return string
+     * @return string 
      */
     public function getRuta()
     {
@@ -105,7 +126,6 @@ class Menu
      * Set listar
      *
      * @param boolean $listar
-     *
      * @return Menu
      */
     public function setListar($listar)
@@ -118,7 +138,7 @@ class Menu
     /**
      * Get listar
      *
-     * @return bool
+     * @return boolean 
      */
     public function getListar()
     {
@@ -129,7 +149,6 @@ class Menu
      * Set agregar
      *
      * @param boolean $agregar
-     *
      * @return Menu
      */
     public function setAgregar($agregar)
@@ -142,7 +161,7 @@ class Menu
     /**
      * Get agregar
      *
-     * @return bool
+     * @return boolean 
      */
     public function getAgregar()
     {
@@ -153,7 +172,6 @@ class Menu
      * Set editar
      *
      * @param boolean $editar
-     *
      * @return Menu
      */
     public function setEditar($editar)
@@ -166,7 +184,7 @@ class Menu
     /**
      * Get editar
      *
-     * @return bool
+     * @return boolean 
      */
     public function getEditar()
     {
@@ -177,7 +195,6 @@ class Menu
      * Set eliminar
      *
      * @param boolean $eliminar
-     *
      * @return Menu
      */
     public function setEliminar($eliminar)
@@ -190,11 +207,14 @@ class Menu
     /**
      * Get eliminar
      *
-     * @return bool
+     * @return boolean 
      */
     public function getEliminar()
     {
         return $this->eliminar;
     }
-}
 
+    public function __toString() {
+        return $this->getNombre();
+    }
+}

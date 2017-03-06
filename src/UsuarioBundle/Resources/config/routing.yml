@@ -1,6 +1,14 @@
-usuario_homepage:
-    path:     /
-    defaults: { _controller: UsuarioBundle:Default:index }
+usuario_login:
+    path: /
+    defaults: { _controller: UsuarioBundle:Usuario:login }
+    
+usuario_validar:
+    path: /Valida
+    defaults: { _controller: UsuarioBundle:Usuario:validar }
+    
+menu_list:
+    path: /Usuario/Menu/list
+    defaults: { _controller: UsuarioBundle:Menu:list }
 
 usuario_add:
     path: /Usuario/add

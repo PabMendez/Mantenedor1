@@ -2,61 +2,84 @@
 
 namespace UsuarioBundle\Entity;
 
+use RolBundle\Entity\Rol;
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Usuario
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="UsuarioBundle\Repository\UsuarioRepository")
  */
 class Usuario
 {
     /**
-     * @var int
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @var int
-     */
-    private $rolId;
-
-    /**
      * @var string
+     *
+     * @ORM\Column(name="rut", type="string", length=12)
      */
     private $rut;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nombres", type="string", length=50)
      */
     private $nombres;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="apellidoP", type="string", length=50)
      */
     private $apellidoP;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="apellidoM", type="string", length=50)
      */
     private $apellidoM;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="username", type="string", length=50)
      */
     private $username;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=50)
      */
     private $password;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=50)
      */
     private $email;
-
-
+    
+    /** @ORM\ManyToOne(targetEntity="RolBundle\Entity\Rol") */
+    /**@ORM\JoinColumn(name="id", referencedColumnName="id", nullable=true, onDelete="SET NULL")*/
+    
+    protected $rol;
+    
     /**
      * Get id
      *
-     * @return int
+     * @return integer 
      */
     public function getId()
     {
@@ -64,34 +87,9 @@ class Usuario
     }
 
     /**
-     * Set rolId
-     *
-     * @param integer $rolId
-     *
-     * @return Usuario
-     */
-    public function setRolId($rolId)
-    {
-        $this->rolId = $rolId;
-
-        return $this;
-    }
-
-    /**
-     * Get rolId
-     *
-     * @return int
-     */
-    public function getRolId()
-    {
-        return $this->rolId;
-    }
-
-    /**
      * Set rut
      *
      * @param string $rut
-     *
      * @return Usuario
      */
     public function setRut($rut)
@@ -104,7 +102,7 @@ class Usuario
     /**
      * Get rut
      *
-     * @return string
+     * @return string 
      */
     public function getRut()
     {
@@ -115,7 +113,6 @@ class Usuario
      * Set nombres
      *
      * @param string $nombres
-     *
      * @return Usuario
      */
     public function setNombres($nombres)
@@ -128,7 +125,7 @@ class Usuario
     /**
      * Get nombres
      *
-     * @return string
+     * @return string 
      */
     public function getNombres()
     {
@@ -139,7 +136,6 @@ class Usuario
      * Set apellidoP
      *
      * @param string $apellidoP
-     *
      * @return Usuario
      */
     public function setApellidoP($apellidoP)
@@ -152,7 +148,7 @@ class Usuario
     /**
      * Get apellidoP
      *
-     * @return string
+     * @return string 
      */
     public function getApellidoP()
     {
@@ -163,7 +159,6 @@ class Usuario
      * Set apellidoM
      *
      * @param string $apellidoM
-     *
      * @return Usuario
      */
     public function setApellidoM($apellidoM)
@@ -176,7 +171,7 @@ class Usuario
     /**
      * Get apellidoM
      *
-     * @return string
+     * @return string 
      */
     public function getApellidoM()
     {
@@ -187,7 +182,6 @@ class Usuario
      * Set username
      *
      * @param string $username
-     *
      * @return Usuario
      */
     public function setUsername($username)
@@ -200,7 +194,7 @@ class Usuario
     /**
      * Get username
      *
-     * @return string
+     * @return string 
      */
     public function getUsername()
     {
@@ -211,7 +205,6 @@ class Usuario
      * Set password
      *
      * @param string $password
-     *
      * @return Usuario
      */
     public function setPassword($password)
@@ -224,7 +217,7 @@ class Usuario
     /**
      * Get password
      *
-     * @return string
+     * @return string 
      */
     public function getPassword()
     {
@@ -235,7 +228,6 @@ class Usuario
      * Set email
      *
      * @param string $email
-     *
      * @return Usuario
      */
     public function setEmail($email)
@@ -248,11 +240,24 @@ class Usuario
     /**
      * Get email
      *
-     * @return string
+     * @return string 
      */
     public function getEmail()
     {
         return $this->email;
     }
+    
+    public function getRol()
+    {
+        return $this->rol;
+    }
+    
+    public function setRol(Rol $rol)
+    {
+        $this->rol = $rol;
+        return $this;
+    }
+    public function __toString() {
+        return $this->getNombre();
+    }
 }
-

@@ -2,48 +2,72 @@
 
 namespace ClienteBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Cliente
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="ClienteBundle\Repository\ClienteRepository")
  */
-class Cliente 
+class Cliente
 {
+    
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
-     */
-    private $rut;
-
-    /**
-     * @var string
+     *
+     * @ORM\Column(name="nombres", type="string", length=50)
      */
     private $nombres;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="apellidoP", type="string", length=50)
      */
-    private $apellidop;
+    private $apellidoP;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="apellidoM", type="string", length=50)
      */
-    private $apellidom;
+    private $apellidoM;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="rut", type="string", length=12)
+     */
+    private $rut;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="direccion", type="string", length=50)
      */
     private $direccion;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=50)
      */
     private $email;
 
     /**
-     * @var string
+     * @var integer
+     *
+     * @ORM\Column(name="fono", type="integer")
      */
     private $fono;
 
@@ -51,7 +75,7 @@ class Cliente
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -59,34 +83,9 @@ class Cliente
     }
 
     /**
-     * Set rut
-     *
-     * @param string $rut
-     *
-     * @return Cliente
-     */
-    public function setRut($rut)
-    {
-        $this->rut = $rut;
-
-        return $this;
-    }
-
-    /**
-     * Get rut
-     *
-     * @return string
-     */
-    public function getRut()
-    {
-        return $this->rut;
-    }
-
-    /**
      * Set nombres
      *
      * @param string $nombres
-     *
      * @return Cliente
      */
     public function setNombres($nombres)
@@ -99,7 +98,7 @@ class Cliente
     /**
      * Get nombres
      *
-     * @return string
+     * @return string 
      */
     public function getNombres()
     {
@@ -107,58 +106,78 @@ class Cliente
     }
 
     /**
-     * Set apellidop
+     * Set apellidoP
      *
-     * @param string $apellidop
-     *
+     * @param string $apellidoP
      * @return Cliente
      */
-    public function setApellidop($apellidop)
+    public function setApellidoP($apellidoP)
     {
-        $this->apellidop = $apellidop;
+        $this->apellidoP = $apellidoP;
 
         return $this;
     }
 
     /**
-     * Get apellidop
+     * Get apellidoP
      *
-     * @return string
+     * @return string 
      */
-    public function getApellidop()
+    public function getApellidoP()
     {
-        return $this->apellidop;
+        return $this->apellidoP;
     }
 
     /**
-     * Set apellidom
+     * Set apellidoM
      *
-     * @param string $apellidom
-     *
+     * @param string $apellidoM
      * @return Cliente
      */
-    public function setApellidom($apellidom)
+    public function setApellidoM($apellidoM)
     {
-        $this->apellidom = $apellidom;
+        $this->apellidoM = $apellidoM;
 
         return $this;
     }
 
     /**
-     * Get apellidom
+     * Get apellidoM
      *
-     * @return string
+     * @return string 
      */
-    public function getApellidom()
+    public function getApellidoM()
     {
-        return $this->apellidom;
+        return $this->apellidoM;
+    }
+
+    /**
+     * Set rut
+     *
+     * @param string $rut
+     * @return Cliente
+     */
+    public function setRut($rut)
+    {
+        $this->rut = $rut;
+
+        return $this;
+    }
+
+    /**
+     * Get rut
+     *
+     * @return string 
+     */
+    public function getRut()
+    {
+        return $this->rut;
     }
 
     /**
      * Set direccion
      *
      * @param string $direccion
-     *
      * @return Cliente
      */
     public function setDireccion($direccion)
@@ -171,7 +190,7 @@ class Cliente
     /**
      * Get direccion
      *
-     * @return string
+     * @return string 
      */
     public function getDireccion()
     {
@@ -182,7 +201,6 @@ class Cliente
      * Set email
      *
      * @param string $email
-     *
      * @return Cliente
      */
     public function setEmail($email)
@@ -195,7 +213,7 @@ class Cliente
     /**
      * Get email
      *
-     * @return string
+     * @return string 
      */
     public function getEmail()
     {
@@ -205,8 +223,7 @@ class Cliente
     /**
      * Set fono
      *
-     * @param string $fono
-     *
+     * @param integer $fono
      * @return Cliente
      */
     public function setFono($fono)
@@ -219,11 +236,14 @@ class Cliente
     /**
      * Get fono
      *
-     * @return string
+     * @return integer 
      */
     public function getFono()
     {
         return $this->fono;
     }
-}
+    public function __toString() {
+        return $this->getNombres();
+    }
 
+}

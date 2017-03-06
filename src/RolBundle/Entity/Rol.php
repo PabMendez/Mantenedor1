@@ -2,82 +2,78 @@
 
 namespace RolBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Rol
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="RolBundle\Repository\RolRepository")
  */
 class Rol
 {
+    
     /**
-     * @var int
-     */
-    private $id;
-
+    * @ORM\Id
+    * @ORM\Column(type="integer")
+    * @ORM\GeneratedValue
+    */
+    protected $id;
+    
+    /** @ORM\Column(type="string", length=100) */
+    protected $nombre; 
+    
     /**
-     * @var string
-     */
-    private $nombre;
-
-    /**
-     * @var bool
+     * @var boolean
+     *
+     * @ORM\Column(name="listar", type="boolean")
      */
     private $listar;
 
     /**
-     * @var bool
+     * @var boolean
+     *
+     * @ORM\Column(name="agregar", type="boolean")
      */
     private $agregar;
 
     /**
-     * @var bool
+     * @var boolean
+     *
+     * @ORM\Column(name="editar", type="boolean")
      */
     private $editar;
 
     /**
-     * @var bool
+     * @var boolean
+     *
+     * @ORM\Column(name="eliminar", type="boolean")
      */
     private $eliminar;
-
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
+    
+ 
+ 
+    
     public function getId()
     {
         return $this->id;
     }
-
-    /**
-     * Set nombre
-     *
-     * @param string $nombre
-     *
-     * @return Rol
-     */
+    
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
-
         return $this;
     }
-
-    /**
-     * Get nombre
-     *
-     * @return string
-     */
+    
     public function getNombre()
     {
         return $this->nombre;
-    }
-
+    }    
     /**
      * Set listar
      *
      * @param boolean $listar
-     *
-     * @return Rol
+     * @return Menu
      */
     public function setListar($listar)
     {
@@ -89,7 +85,7 @@ class Rol
     /**
      * Get listar
      *
-     * @return bool
+     * @return boolean 
      */
     public function getListar()
     {
@@ -100,8 +96,7 @@ class Rol
      * Set agregar
      *
      * @param boolean $agregar
-     *
-     * @return Rol
+     * @return Menu
      */
     public function setAgregar($agregar)
     {
@@ -113,7 +108,7 @@ class Rol
     /**
      * Get agregar
      *
-     * @return bool
+     * @return boolean 
      */
     public function getAgregar()
     {
@@ -124,8 +119,7 @@ class Rol
      * Set editar
      *
      * @param boolean $editar
-     *
-     * @return Rol
+     * @return Menu
      */
     public function setEditar($editar)
     {
@@ -137,7 +131,7 @@ class Rol
     /**
      * Get editar
      *
-     * @return bool
+     * @return boolean 
      */
     public function getEditar()
     {
@@ -148,8 +142,7 @@ class Rol
      * Set eliminar
      *
      * @param boolean $eliminar
-     *
-     * @return Rol
+     * @return Menu
      */
     public function setEliminar($eliminar)
     {
@@ -161,11 +154,16 @@ class Rol
     /**
      * Get eliminar
      *
-     * @return bool
+     * @return boolean 
      */
     public function getEliminar()
     {
         return $this->eliminar;
     }
-}
+    
+   
+    public function __toString() {
+        return $this->getNombre();
+    }
 
+}

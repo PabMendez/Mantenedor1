@@ -1,6 +1,3 @@
-proveedor_homepage:
-    path:     /
-    defaults: { _controller: ProveedorBundle:Default:index }
 
 proveedor_add:
     path: /Proveedor/add

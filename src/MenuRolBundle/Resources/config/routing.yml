@@ -1,3 +1,15 @@
-menu_rol_homepage:
-    path:     /
-    defaults: { _controller: MenuRolBundle:Default:index }
+menuRol_add:
+    path: /MenuRol/add
+    defaults: { _controller: MenuRolBundle:MenuRol:add }
+    
+menuRol_list:
+    path: /MenuRol/list
+    defaults: { _controller: MenuRolBundle:MenuRol:list }
+    
+menuRol_edit:
+    path: /MenuRol/edit/{id}
+    defaults: { _controller: MenuRolBundle:MenuRol:edit }
+    
+menuRol_delete:
+    path: /MenuRol/delete/{id}
+    defaults: { _controller: MenuRolBundle:MenuRol:delete }

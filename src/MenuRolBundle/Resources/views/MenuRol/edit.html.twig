@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block seccion2 %}
+    <h1>Menu Rol</h1>
+{% endblock %}
+{% block seccion3 %}
+    <div class="divisito">
+        <h2>Editar Menu Rol</h2><hr><br>    
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+    {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -23,7 +23,7 @@ header{
 
 nav{
     float: left;
-    max-width: 200px;
+    width: 130px;
     margin: 0;
     padding:2em;
     background: brown;
@@ -31,7 +31,7 @@ nav{
 }
 
 article{
-    margin-left: 150px;
+    margin-left: 250px;
     padding: 1em;
     height: 500px;
     clear: right;
@@ -46,7 +46,7 @@ article{
     
 }
 table{
-    width: 95%;
+    width: 90%;
     
     
 }
@@ -90,8 +90,8 @@ div .botoness:hover{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    height: 25px;
-    
+    height: 30px;
+    float: left;
 }
 .divisito {
     width: 500px;
@@ -118,4 +118,10 @@ div .botoness:hover{
 
 .botonsuelo:hover {
     background-color: #45a049;
+}
+
+.mensajito{
+    text-align: center;
+    color: green;
+    font-size: 50px;
 }

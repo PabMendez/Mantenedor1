@@ -1,6 +1,3 @@
-rol_homepage:
-    path:     /
-    defaults: { _controller: RolBundle:Default:index }
 
 rol_add:
     path: /Rol/add

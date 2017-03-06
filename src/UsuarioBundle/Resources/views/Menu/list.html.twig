@@ -1,0 +1,16 @@
+
+
+{% block seccion1 %}
+    
+    <div>
+            <b>{{ usuarioNombre }} {{ usuarioRol }}</b><br><br>
+            {% for Menu in menuRol %}
+                <ul>
+                    <li><a href="{{Menu.menu.ruta}}">{{Menu.menu.nombre}}</a></li>
+                </ul>
+                
+             {% endfor %}
+         </div>   
+        
+{% endblock %}
+

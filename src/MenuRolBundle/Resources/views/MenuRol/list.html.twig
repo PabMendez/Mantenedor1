@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig' %}
+
+{% block seccion2 %}
+    <h1>Menu Rol</h1>
+{% endblock %}
+
+{% block seccion3 %}
+    <div class="seccioncilla">
+    <a class="botones" href={{path("menuRol_add")}}>Agregar menuRol</a><br><br>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>MenuID</th>
+        <th>RolID</th>
+        <th>Acciones</th>
+    </tr>
+    <tr>
+        {% for lista in menuRol %}
+            <td>{{lista.id}}</td>
+            <td>{{lista.menuId}}</td>
+            <td>{{lista.rolId}}</td>
+            <td>
+                <a class="botoness" href="{{path("menuRol_delete",{"id":lista.id})}}" onclick="return confirm('Estas seguro?')">Eliminar</a>
+                <a class="botoness" href="{{path("menuRol_edit",{"id":lista.id})}}">Editar</a>  
+            </td>
+    </tr>
+{% endfor %}
+</table>
+
+</div>
+{% endblock %}
